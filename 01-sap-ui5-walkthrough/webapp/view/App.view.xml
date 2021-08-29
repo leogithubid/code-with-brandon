@@ -6,7 +6,7 @@
           controllerName="sap.ui.demo.walkthrough.controller.App">
 <!--     <Text text="Hello XML View!"></Text>
  -->
-        <Button text="Say Hello" press=".onShowHello"></Button>
+        <Button text="{i18n>showHelloButtonText}" press=".onShowHello"></Button>
 <!-- Step 7 : Add input field and bind it with JSON Model -->
 <Input  value="{/recipient/name}"
         description="Hello {/recipient/name}"    

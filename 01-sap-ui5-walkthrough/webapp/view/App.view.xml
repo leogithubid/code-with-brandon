@@ -7,4 +7,9 @@
 <!--     <Text text="Hello XML View!"></Text>
  -->
         <Button text="Say Hello" press=".onShowHello"></Button>
+<!-- Step 7 : Add input field and bind it with JSON Model -->
+<Input  value="{/recipient/name}"
+        description="Hello {/recipient/name}"    
+        valueLiveUpdate="true"
+        width="60%"/>
 </mvc:View>

@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>SAPUI5 Walkthrough</title>
+	<!-- step2 - we are giving name for webapp or root folder
+	and then oninit we are asking to load index.js file at this path -->
 	<script
 		id="sap-ui-bootstrap"
 		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
@@ -16,7 +18,8 @@
 		data-sap-ui-oninit="module:sap/ui/demo/walkthrough/index">
 	</script>
 </head>
-<body>
-	<div>Hello World</div>
+<body class="sapUiBody" id="content">
+<!--   step 3 - this div is removed and the content will be added from index.js
+		<div>Hello World</div> -->
 </body>
 </html>

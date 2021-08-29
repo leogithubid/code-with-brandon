@@ -23,7 +23,7 @@ sap.ui.define([
 
             //set JSON Model - copied from App controller from the previous steps
             //create oData variable to fill some initial values
-            // set data model on view
+            // set data model on view - the view reference is removed - this.getView()
             var oData = {
                 recipient: {
                     name: "Component"

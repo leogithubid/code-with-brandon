@@ -1,0 +1,27 @@
+<!-- 
+    This is a new view that will list Invoices from Invoice.json file
+    See how items aggregation that is default for List control is used for binding
+    invoice>/Invoices means - in manifest there is invoice model look for its json
+    file and then it has collection named Invoices and bind it
+ -->
+<mvc:View xmlns="sap.m"
+          controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+          xmlns:mvc="sap.ui.core.mvc">
+    <List headerText="{i18n>invoiceListHeader}"
+          class="sapUiResponsiveMargin"
+          width="auto"
+          items="{invoice>/Invoices}">
+        <items>
+            <ObjectListItem title="{invoice>Quantity} * {invoice>ProductName}"
+                            number="{
+                                parts : [{path:'invoice>ExtendedPrice'},{path:'view>/currency'}],
+                                type : 'sap.ui.model.type.Currency',
+                                formatOptions : {
+                                    showMeasure : false
+                                }
+                            }"
+                            numberUnit="{view>/currency}">
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View>

@@ -3,8 +3,10 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>26-Remote Odata Configuration</title>
-	<!-- We are giving name for webapp or root folder
+	<title>27-Mock Server Configuration - Test Page</title>
+	<!-- THIS IS TEST PAGE !!!
+    Here we change the component support to point to Init Mock Server.js
+    We are giving name for webapp or root folder
 	and then on init we are asking to load index.js file at this path 
 	The above is replaced with Component Support on init
 	We declare our component in the body of our index.html. 
@@ -23,9 +25,9 @@
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-async="true" 
 		data-sap-ui-resourceroots='{
-			"sap.ui.demo.walkthrough": "./"
+			"sap.ui.demo.walkthrough": "../"
 		}' 
-		data-sap-ui-oninit="module:sap/ui/core/ComponentSupport">
+		data-sap-ui-oninit="module:sap/ui/demo/walkthrough/test/initMockServer">
 		</script>
 </head>
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>26-(Optional)-Remote-ODATA-Server</title>
+	<!-- We are giving name for webapp or root folder
+	and then on init we are asking to load index.js file at this path 
+	The above is replaced with Component Support on init
+	We declare our component in the body of our index.html. 
+	In the bootstrapping script of our index.html, we enable the ComponentSupport module 
+	and remove the sap.m library. Then, we declare our component in the body via a div tag.
+	This will instantiate the component when the onInit event is executed.
+	We will no longer need our index.js from now on, because the descriptor takes care of 
+	everything.
+	We changed the data source here to North wind and it gave the CORS problem
+	SAP asks to read about it from walkthrough guide, so let's have a look
+	training also talks about it-->
+	<script id="sap-ui-bootstrap" 
+		src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_fiori_3" 
+		data-sap-ui-libs="sap.m" 
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-async="true" 
+		data-sap-ui-resourceroots='{
+			"sap.ui.demo.walkthrough": "./"
+		}' 
+		data-sap-ui-oninit="module:sap/ui/core/ComponentSupport">
+		</script>
+</head>
+
+<body class="sapUiBody" id="content">
+	<div data-sap-ui-component 
+		 data-name="sap.ui.demo.walkthrough" 
+		 data-id="container"
+		 data-settings='{"id" : "walkthrough"}'>
+	</div>
+</body>
+
+</html>

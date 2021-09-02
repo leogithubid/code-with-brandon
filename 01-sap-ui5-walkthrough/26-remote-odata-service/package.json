@@ -1,12 +1,13 @@
 {
-  "name": "10-app-descriptor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "Sample-Package",
+	"version": "1.0.0",
+	"description": "Sample package.json",
+	"scripts": {
+		"proxy": "node proxy.js"
+	},
+	"devDependencies": {
+		"cors-anywhere": "^0.4.1"
+	},
+	"dependencies": {
+	}
 }

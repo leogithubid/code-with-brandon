@@ -1,12 +1,17 @@
+/* 
+This will be called from the mockServer.html on Init method
+Here we are loading the mockserver.js file in localService folder
+and then we are calling its init method
+We are also using ComponentSupport, this was earlier in index.html's onInit
+ */
 sap.ui.define([
-"../localService/mockserver" //this points to mock server in local service folder
-], function(mockserver) {
-    'use strict';
-    
-    //iniitalize mock server - call init function in the mockserver.js
-    mockserver.init();
+	"../localService/mockserver"
+], function (mockserver) {
+	"use strict";
 
-    //iniitalize componnet.support
-    sap.ui.require("sap/ui/core/ComponentSupport"); //this is moved from index.html to here
-    //in index.html or mock.html we point to this js file instead of component support
+	// initialize the mock server
+	mockserver.init();
+
+	// initialize the embedded component on the HTML page
+	sap.ui.require(["sap/ui/core/ComponentSupport"]);
 });

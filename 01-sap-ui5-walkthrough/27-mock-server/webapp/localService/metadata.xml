@@ -1,7 +1,3 @@
-<!-- This is the meta data of Invoices.json But why does it point to northwind?
-Is it only for standard namespace and all ? 
-SDK says we can get this metadata from the real service with $metadata addition
-The mock server will use this file while running, makes sense ! -->
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
 	<edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0"
 			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">

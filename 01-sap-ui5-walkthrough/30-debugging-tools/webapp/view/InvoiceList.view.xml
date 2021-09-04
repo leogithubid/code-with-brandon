@@ -1,0 +1,53 @@
+<!-- 
+    This is a new view that will list Invoices from Invoice.json file
+    See how items aggregation that is default for List control is used for binding
+    invoice>/Invoices means - in manifest there is invoice model look for its json
+    file and then it has collection named Invoices and bind it
+    We have added expression binding to numberstate
+    We will call the custom formatter from model-formatter.js file
+    and then use the status text function to get the description of invoice status
+    Now let's add a search bar in the toolbar
+    Let's sort it and group it based on shipper
+ -->
+<mvc:View xmlns="sap.m"
+          controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+          xmlns:mvc="sap.ui.core.mvc">
+    <List id="invoiceList"
+          headerText="{i18n>invoiceListHeader}"
+          class="sapUiResponsiveMargin"
+          width="auto"
+          items="{
+              path : 'invoice>/Invoices',
+              sorter : {
+                  path : 'ShipperName',
+                  group : true
+              }}">
+        <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>invoiceListHeader}"></Title>
+                <ToolbarSpacer/>
+                <SearchField width="50%" search=".onSearchInvoices"></SearchField>
+            </Toolbar>
+        </headerToolbar>
+        <items>
+            <ObjectListItem title="{invoice>Quantity} * {invoice>ProductName}"
+                            number="{
+                                parts : [{path:'invoice>ExTendedPrice'},{path:'view>/currency'}],
+                                type : 'sap.ui.model.type.Currency',
+                                formatOptions : {
+                                    showMeasure : false
+                                }
+                            }"
+                            numberUnit="{view>/currency}"
+                            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+                <firstStatus>
+                    <ObjectStatus text="{
+                        path : 'invoice>Status',
+                        formatter : '.formatter.statusText'
+                    }">
+                    </ObjectStatus>
+                </firstStatus>
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View>

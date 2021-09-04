@@ -1,0 +1,4 @@
+specVersion: '2.5'
+metadata:
+  name: 10-app-descriptor
+type: application

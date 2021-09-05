@@ -1,0 +1,19 @@
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn{
+    margin-right : 0.125 rem
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn{
+    margin-left : 0.125 rem
+}
+
+.myAppDemoWT .myCustomText{
+    display:  inline-block;
+    font-weight:  bold;
+}
+/* Product Rating */
+.myAppDemoWTProductRating{
+    padding : 0.75 rem;
+}
+.myAppDemoWTProductRating .sapMRI{
+    vertical-align:  initial ;
+}

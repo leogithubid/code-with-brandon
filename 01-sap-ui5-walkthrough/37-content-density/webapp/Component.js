@@ -48,6 +48,17 @@ sap.ui.define(
                 //initialise Router
                 this.getRouter().initialize();
             },
+            //content density
+            getContentDensityClass : function () {
+                if (!this._sContentDensityClass) {
+                    if (!Device.support.touch) {
+                        this._sContentDensityClass = "sapUiSizeCompact";
+                    } else {
+                        this._sContentDensityClass = "sapUiSizeCozy";
+                    }
+                }
+                return this._sContentDensityClass;
+            },
             //now call exit
             exit : function(){
                 this._helloDialog.destroy();

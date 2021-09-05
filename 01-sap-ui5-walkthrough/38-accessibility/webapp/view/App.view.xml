@@ -1,0 +1,15 @@
+<!-- In the App view we are linking it to its controller
+	 Then we place a page and call a view called Hello Panel 
+	 Embed the view invoicelist
+	 In manifest.json , in the routing section we have written 
+	 to point to the App with id=app and controlAggregation = "pages" 
+	 The content from App view is now moved to Overview -->
+<View controllerName="sap.ui.demo.walkthrough.controller.App" 
+	  xmlns="sap.m" 
+	  xmlns:mvc="sap.ui.core.mvc" 
+	  displayBlock="true">
+	<Shell>
+		<App class="myAppDemoWT" id="app">
+		</App>
+	</Shell>
+</View>

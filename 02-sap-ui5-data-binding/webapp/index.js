@@ -14,7 +14,7 @@ sap.ui.require([
     //attach a function to init event
     sap.ui.getCore().attachInit(function(){
         new Text({
-            text : "Welcome to UI5 Data Binding "
+            text : "{/greetingText}"
         }).placeAt("content");
     });
 });

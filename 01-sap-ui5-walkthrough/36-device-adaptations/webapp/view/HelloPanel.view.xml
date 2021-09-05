@@ -1,0 +1,32 @@
+<!-- This is Hello Panel View, it has a controller
+     It has a Panel that contains some controls like Buttons, Input, Text etc
+	 This will be called from App view 
+	 Now we have added a Fragment to it in the controller, so check that out
+	 we addded one icon to the button show hello-->
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="sap.ui.demo.walkthrough.controller.HelloPanel">
+						<Panel headerText="{i18n>homePanelTitle}"
+							   class="sapUiResponsiveMargin"
+							   width="auto"
+							   	expandable="{device>/system/phone}"
+								expanded="{= !${device>/system/phone} }">
+							<content>
+								<Button id="helloDialogButton"
+										text="Say Hello with Fragment"
+										press=".onOpenDialog"
+										class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
+								<Button text="{i18n>showHelloButtonText}" 
+								        press=".onShowHello"
+										class="myCustomButton"
+										icon="sap-icon://call"/>
+								<Input value="{/recipient/name}" 
+								       description="Hello {/recipient/name}" 
+									   valueLiveUpdate="true" 
+									   width="60%" />
+								<FormattedText 
+									  htmlText="Hello {/recipient/name}"
+								      class="sapUiSmallMarginEnd sapThemeHighLight-asColor myCustomText"/>
+							</content>
+						</Panel>
+</mvc:View>

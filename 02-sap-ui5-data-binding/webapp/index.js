@@ -2,8 +2,9 @@ sap.ui.require([
     "sap/m/Text",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/mvc/XMLView",
-    "sap/ui/model/BindingMode"
-],function(Text,JSONModel,XMLView,BindingMode){
+    "sap/ui/model/BindingMode",
+    "sap/ui/model/resource/ResourceModel"
+],function(Text,JSONModel,XMLView,BindingMode,ResourceModel){
     "use strict";
 
     //create an object of JSON Model and write some text to it
@@ -21,6 +22,16 @@ sap.ui.require([
 
     //attach the model to the core for now, in prodution apps - we do it for views
     sap.ui.getCore().setModel(oModel);
+
+    //create i18n model
+    var oResourceModel = new ResourceModel({
+        bundleName : "sap.ui.demo.db.i18n.i18n",
+        supportedLocales : ["","de"],
+        fallbackLocale : ""
+    });
+
+    //attach the model to the core
+    sap.ui.getCore().setModel(oResourceModel,"i18n");
 
     //attach a function to init event
     sap.ui.getCore().attachInit(function(){

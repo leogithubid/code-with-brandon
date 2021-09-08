@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "TDE(ABAP)",
+			"uri": "adt://tde"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

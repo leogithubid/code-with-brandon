@@ -21,12 +21,12 @@ sap.ui.require([
             zip : "2150",
             country : "Australia"
         },
-        salesAmount : 12345.6789,//This amount will be formatter in the App.view
+        salesAmount : 12345.6789,//This amount will be formatter in the
         currencyCode : "AUD"
     });
 
     //make the binding oneway
-    oModel.setDefaultBindingMode(BindingMode.OneWay);
+    //oModel.setDefaultBindingMode(BindingMode.OneWay);
 
     //attach the model to the core for now, in prodution apps - we do it for views
     sap.ui.getCore().setModel(oModel);
@@ -41,10 +41,17 @@ sap.ui.require([
     //attach the model to the core
     sap.ui.getCore().setModel(oResourceModel,"i18n");
 
-    //attach a function to init event
-    sap.ui.getCore().attachInit(function(){
-        new XMLView({
-            viewName : "sap.ui.demo.db.view.App" //point to view folder->App.view.xml
-        }).placeAt("content");
+    //create a view
+    var oView = new XMLView({
+        viewName : "sap.ui.demo.db.view.App"
     });
+
+    //register view the message manager to display errors on input currency field
+    //when we format a field it can validate whether the input adheres to the
+    //data type, but to view the message we have to register the view like this
+    sap.ui.getCore().getMessageManager().registerObject(oView,true);
+
+    //place the view at the content
+    oView.placeAt("content");
+
 });

@@ -14,7 +14,13 @@ sap.ui.require([
         panelHeaderText : "Welcome to UI5 Data Binding - with JSON Model",
         firstName : "Liyon",
         lastName : "SV",
-        enabled : true
+        enabled : true,
+        address : {
+            street : "8 Cowper Street",
+            city : "Parramatta",
+            zip : "2150",
+            country : "Australia"
+        }
     });
 
     //make the binding oneway

@@ -1,5 +1,6 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc"
           xmlns="sap.m"
+          xmlns:l="sap.ui.layout"
           xmlns:form="sap.ui.layout.form">
     <Panel headerText="{i18n>panelHeaderText}" width="auto" class="sapUiResponsiveMargin">
         <form:SimpleForm editable="true" layout="ColumnLayout">
@@ -10,5 +11,15 @@
             <Label text="{i18n>enabled}"/>
             <CheckBox selected="{/enabled}"/>
         </form:SimpleForm>
+    </Panel>
+    <Panel headerText="{i18n>panelHeaderText2}" width="auto" class="sapUiResponsiveMargin">
+        <content>
+            <l:VerticalLayout>
+                <Label labelFor="address" text="{i18n>address}"/>
+                <FormattedText id="address" width="200px" class="sapUiSmallMarginBottom"
+                    htmlText="{/address/street}&lt;br>{/address/city}&lt;br>{/address/zip}&lt;br>{/address/city}">
+                </FormattedText>
+            </l:VerticalLayout>
+        </content>
     </Panel>
 </mvc:View>

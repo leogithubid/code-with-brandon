@@ -27,6 +27,20 @@ sap.ui.define([
 			var oCurrency = new Currency(oLocaleData.mData.currencyFormat);
 			return oCurrency.formatValue([fUnitPrice * iStockLevel, sCurrCode], "string");
 
+		},
+        //once we select an item in the first list this function will be called
+		onItemSelected: function(oEvent) {
+            //get the selected item
+			var oSelectedItem = oEvent.getSource();
+            //get the selected item
+			var oContext = oSelectedItem.getBindingContext("products");
+            //get the path to the item selected
+			var sPath = oContext.getPath();
+            //get the panel to the form where we display more details
+			var oProductDetailPanel = this.byId("productDetailsPanel");
+            //link path to the details
+			oProductDetailPanel.bindElement({ path: sPath, model: "products" });
+
 		}
     });
 });

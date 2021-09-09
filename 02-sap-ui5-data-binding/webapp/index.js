@@ -20,7 +20,9 @@ sap.ui.require([
             city : "Parramatta",
             zip : "2150",
             country : "Australia"
-        }
+        },
+        salesAmount : 12345.6789,//This amount will be formatter in the App.view
+        currencyCode : "AUD"
     });
 
     //make the binding oneway

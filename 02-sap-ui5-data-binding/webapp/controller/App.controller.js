@@ -1,7 +1,10 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/library"
-], function(Controller,mobileLibrary) {
+	"sap/m/library",
+	"sap/ui/core/Locale",
+	"sap/ui/core/LocaleData",
+	"sap/ui/model/type/Currency"
+], function(Controller,mobileLibrary,Locale,LocaleData,Currency) {
     'use strict';
     return Controller.extend("sap.ui.demo.db.controller.App",{
         //this function will be called from the Link control in the App view
@@ -15,6 +18,15 @@ sap.ui.define([
                 oResourceBundle.getText("mailSubject", [sFirstName]),
                 oResourceBundle.getText("mailBody")
             );
-        }
+        },
+        //another formatter function to format stock value field
+		formatStockValue: function(fUnitPrice, iStockLevel, sCurrCode) {
+			var sBrowserLocale = sap.ui.getCore().getConfiguration().getLanguage();
+			var oLocale = new Locale(sBrowserLocale);
+			var oLocaleData = new LocaleData(oLocale);
+			var oCurrency = new Currency(oLocaleData.mData.currencyFormat);
+			return oCurrency.formatValue([fUnitPrice * iStockLevel, sCurrCode], "string");
+
+		}
     });
 });

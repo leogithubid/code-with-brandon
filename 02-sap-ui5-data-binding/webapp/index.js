@@ -7,6 +7,13 @@ sap.ui.require([
 ],function(Text,JSONModel,XMLView,BindingMode,ResourceModel){
     "use strict";
 
+    //create a JSON model object
+    var oProductModel = new JSONModel();
+    //load data from the json file linked
+    oProductModel.loadData("./model/Products.json");
+    //attach the model to the core with id "products"
+    sap.ui.getCore().setModel(oProductModel, "products");
+
     //create an object of JSON Model and write some text to it
     var oModel = new JSONModel({
         //added new properites to json MODEL 

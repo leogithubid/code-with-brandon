@@ -28,6 +28,7 @@ sap.ui.require([
             zip : "2150",
             country : "Australia"
         },
+        priceThreshold: 20,
         salesAmount : 12345.6789,//This amount will be formatter in the
         currencyCode : "AUD"
     });
